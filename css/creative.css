@@ -575,6 +575,7 @@ footer .footer-below {
   /*height: 50px;*/
   margin: auto;
   margin-top: -55px;
+  margin-bottom: 20px;
   width: 200px;
   height: 200px;
   border: 1px solid #4483e2;
