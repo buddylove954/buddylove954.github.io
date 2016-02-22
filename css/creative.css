@@ -22,7 +22,9 @@ body {
 }
 
 hr {
-    max-width: 50px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 50px;
     border-color: #e8b873;
     border-width: 3px;
 }
@@ -229,15 +231,17 @@ header .header-content .header-content-inner p {
 #header-title {
   font-size: 26px;
   font-weight: 300;
-  color: rgba(255,255,255, 1);
+  color: white;
   margin-bottom: 0;
+  -webkit-text-outline: 1px black;
 }
 
 #header-desc {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 300;
-  color: rgba(255,255,255, 1);
+  color: white;
+  -webkit-text-outline: 1px black;
 }
 
 @media(min-width:768px) {
@@ -574,10 +578,10 @@ footer .footer-below {
 .pic-container {
   /*height: 50px;*/
   margin: auto;
-  margin-top: -55px;
-  margin-bottom: 20px;
-  width: 200px;
-  height: 200px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 175px;
+  height: 175px;
   border: 1px solid #4483e2;
   border-radius: 50%;
   overflow: hidden;
