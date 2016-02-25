@@ -362,6 +362,7 @@ header .header-content .header-content-inner p {
 .no-gutter > [class*=col-] {
     padding-right: 0;
     padding-left: 0;
+
 }
 
 .btn-default {
@@ -585,4 +586,8 @@ footer .footer-below {
   border: 1px solid #4483e2;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.portfolio-fill {
+  background-color: #476481;
 }
