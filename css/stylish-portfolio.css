@@ -44,16 +44,6 @@ body {
     font-weight: 700;
 }
 
-#profile-pic {
-    width: 250px;
-    height: 250px;
-    border: 1px solid #97baf0;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-,
-
 /* Custom Button Styles */
 
 .btn-dark {
