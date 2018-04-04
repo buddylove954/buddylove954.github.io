@@ -1,203 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <title>Asteroids</title>
-    <script>console.log("If you're reading this hire me :)")</script>
-    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon.png' />
-    <style>
-      html, body, canvas {
-        padding: 0;
-        border: 0;
-        margin: 0;
-        outline: 0;
-        font: inherit;
-        box-sizing: inherit;
-        text-align: inherit;
-        text-decoration: inherit;
-        vertical-align: baseline;
-        color: inherit;
-        background: transparent;
-      }
-
-      @font-face {
-        font-family: 'starjedi';
-        src: url('vendor/starjedi.ttf');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      body {
-        font-family: 'starjedi';
-      }
-
-      .group {
-        display: block;
-        content: "";
-        clear: both;
-      }
-
-      canvas {
-        background-color: black;
-        background-image: url("assets/outerspace2.jpg");
-        background-size: 100%;
-        margin: auto;
-        display: block;
-      }
-
-      .modal {
-        display: none;
-        position: absolute;
-        z-index: 1000;
-        top: 50%;
-        left: 50%;
-        width: 450px;
-        padding: 50px;
-        margin-left: -250px;
-        transform: translateY(-50%);
-        background: -webkit-linear-gradient(top, #fff, #ccc);
-        box-shadow: 0 2px 3px rgba(0,0,0,0.3);
-        border-radius: 5px;
-        min-height: 300px;
-        letter-spacing: 1px;
-      }
-
-      .modal > h1 {
-        font-size: 60px;
-        text-align: center;
-        margin-top: -30px;
-        margin-bottom: 0;
-      }
-
-      .modal > marquee {
-        height: 175px;
-      }
-
-      .modal > marquee > p {
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-	      transform-origin: 50% 100%;
-        transform: perspective(300px) rotateX(35deg);
-      }
-
-      .new-game {
-        display: none;
-      }
-
-    .game-over {
-      display: none;
-
-    }
-
-    .is-active {
-       display: block;
-     }
-
-     .paused > p {
-       text-align: center;
-     }
-
-     .paused > h3 {
-       text-align: center;
-       font-size: 30px;
-     }
-
-     .game-over > p {
-       text-align: center;
-       margin-top: 100px;
-     }
-
-     .group > p {
-       float: left;
-       margin-top: 0;
-     }
-     .group > button {
-       float: right;
-       border-radius: 3px;
-       font-weight: bold;
-       box-shadow: 0 2px 3px rgba(0,0,0,0.3);
-     }
-
-     .group > button:hover {
-       cursor: pointer;
-       background:#d1d1d1;
-     }
-
-     ul {
-       width: 350px;
-     }
-
-     .controls {
-       margin-top: 60px;
-       font-size: 14px;
-       text-align: center;
-     }
-
-     span > h4 {
-        text-align: center;
-     }
-
-    </style>
-  </head>
-
-  <body>
-    <canvas id="game-canvas"></canvas>
-    <script src="vendor/jquery-2.1.1.js"></script>
-    <script src="vendor/howler.min.js"></script>
-
-    <script src="lib/sounds.js"></script>
-    <script src="lib/utils.js"></script>
-    <script src="lib/game.js"></script>
-    <script src="lib/movingObject.js"></script>
-    <script src="lib/bullet.js"></script>
-    <script src="lib/asteroid.js"></script>
-    <script src="lib/ship.js"></script>
-    <script src="lib/gameView.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Astroids 2045</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
     <script>
-      var canvasEl = document.getElementById("game-canvas");
-      canvasEl.width = window.innerWidth;
-      canvasEl.height = window.innerHeight;
-      var dims = {DIM_X: canvasEl.width, DIM_Y: canvasEl.height};
-      var ctx = canvasEl.getContext("2d");
-      new Asteroids.GameView(
-        canvasEl,
-        dims,
-        ctx
-      ).start(canvasEl);
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/spaceshooterweb.json", {onProgress: UnityProgress});
     </script>
-    <div class="modal new-game is-active">
-      <h1>asteroids</h1>
-      <marquee class="marquee" scrollamount="2" behavior="scroll" direction="up">
-        <p>move and turn with wad or arrow keys<p>
-        <p>space to fire</p>
-        <p>p to pause and enter upgrade store</p>
-        <p>m to toggle sound</p>
-        <p>enter to start</p>
-      </marquee>
-    </div>
-
-      <div class="modal game-over">
-        <h1>game over!</h1>
-        <p>press enter to play again</p>
-    </div>
-      <div class="modal paused">
-        <h1>paused</h1>
-        <h3>upgrades</h3>
-        <span class="upgrades"></span>
-  <ul>
-    <li class="group"><p>invulnerability (3s)</p><button class="shields button">100</button></li>
-    <li class="group"><p>reload speed</p><button class="reload button">200</button></li>
-    <li class="group"><p>ship speed</p><button class="speed button">100</button></li>
-    <li class="group"><p>add life</p><button class="add-life button">500</button></li>
-  </ul>
-      <div class="controls">
-        <p>p to resume</p>
-        <p>move and turn with wad or arrow keys<p>
-        <p>space to fire</p>
-        <p>m to toggle sound</p>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Astroids 2045</div>
       </div>
     </div>
   </body>
-
 </html>
